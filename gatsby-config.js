@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -122,6 +126,7 @@ module.exports = {
       resolve: 'gatsby-source-graphcms',
       options: {
         endpoint: process.env.HYGRAPH_ENDPOINT,
+        token: process.env.HYGRAPH_TOKEN,
       },
     },
   ],
